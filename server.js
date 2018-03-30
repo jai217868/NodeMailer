@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
-
+var port = process.env.PORT || 8000;
 var transporter = nodemailer.createTransport(smtpTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
@@ -37,4 +37,4 @@ app.post("/email",function(req,res){
 	res.write("hello");
 	res.end();
 })
-app.listen(8000);
+app.listen(port);
