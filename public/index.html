@@ -48,7 +48,7 @@
                 if (ajaxRequest) 
                 {
                     ajaxRequest.onreadystatechange = ajaxResponse;
-                    ajaxRequest.open("POST","http://localhost:8000/email");
+                    ajaxRequest.open("POST","/email");
                     ajaxRequest.setRequestHeader("Content-Type", "application/json");// Where?
                     ajaxRequest.send(JSON.stringify(order));
                 }
