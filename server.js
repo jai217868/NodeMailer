@@ -1,7 +1,9 @@
 var express = require('express');
 var path = require('path');
+var cors = require('cors');
 var bodyParser = require('body-parser');
 var app = express();
+app.use(cors())
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var port = process.env.PORT || 8000;
