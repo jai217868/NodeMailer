@@ -30,13 +30,18 @@ app.post("/email",function(req,res){
 	transporter.sendMail(mailOptions, function(error, info){
 	  if (error) {
 	    console.log(error);
+          console.log(req.body);
+        res.statuscode = 200;
+        res.write(error);
+        res.end();
 	  } else {
+          console.log(req.body);
+        res.statuscode = 200;
+        res.write("hello");
+        res.end();
 	    console.log('Email sent: ' + info.response);
 	  }
 	}); 
-	console.log(req.body);
-	res.statuscode = 200;
-	res.write("hello");
-	res.end();
+	
 })
 app.listen(port);
