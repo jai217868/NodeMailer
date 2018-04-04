@@ -18,7 +18,8 @@
 <body>
 
 <div class="container">
-  <form action="#" method="post">
+    <div class="col-sm-2"></div>
+  <div class="col-sm-8">
     <div class="form-group">
       <label for="email">To:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
@@ -32,43 +33,12 @@
       <textarea type="text" class="form-control" id="message" placeholder="Enter Message...." name="pwd"></textarea> 
     </div>
     <button type="submit" class="btn btn-default" onclick="saveRecord();">Submit</button>
-  </form>
+    </div>
+      <div class="col-sm-2"></div>
 </div>
 
 </body>
-    <script type="text/javascript">
-        function saveRecord(){
-            var order = new Object();
-            order.to = document.getElementById("email").value;
-            order.subject = document.getElementById("subject").value;
-            order.message = document.getElementById("message").value;
-           
-            alert(JSON.stringify(order))
-                var ajaxRequest = new XMLHttpRequest();
-                if (ajaxRequest) 
-                {
-                    ajaxRequest.onreadystatechange = ajaxResponse;
-                    ajaxRequest.open("POST","/email");
-                    ajaxRequest.setRequestHeader("Content-Type", "application/json");// Where?
-                    ajaxRequest.send(JSON.stringify(order));
-                }
-               function ajaxResponse() 
-                {
-                    if(ajaxRequest.readyState != 4)
-                    {
-                        console.log("its in process")
-
-                    }else if(ajaxRequest.status == 200)
-                    {
-                        location.reload();
-                    }
-                    else
-                    {
-                        console.log("Error")
-                    }
-
-          }
-
-        }
+    <script src="js/index.js">
+       
     </script>
 </html>

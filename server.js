@@ -12,7 +12,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
   host: 'smtp.gmail.com',
   auth: {
     user: 'ss4u.team.node@gmail.com',
-    pass: 'Marchend'
+    pass: 'Team Node Rocks7'
   }
 }));
  
@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname,"public")));
 app.post("/email",function(req,res){
 
 	var mailOptions = {
-	  from: 'divya@gmail.com',
+	  from: 'test@gmail.com',
 	  to: req.body.to,
 	  subject: req.body.subject,
 	  text: req.body.message
@@ -30,17 +30,17 @@ app.post("/email",function(req,res){
 	transporter.sendMail(mailOptions, function(error, info){
 	  if (error) {
 	    console.log(error);
-          console.log(req.body);
+        console.log(req.body);
         res.statuscode = 200;
         res.write(error);
         res.end();
-	  } else {
-          console.log(req.body);
+	  } 
+        //console.log(req.body);
         res.statuscode = 200;
-        res.write("hello");
+        res.write('Email sent Successfully');
         res.end();
 	    console.log('Email sent: ' + info.response);
-	  }
+	  
 	}); 
 	
 })
