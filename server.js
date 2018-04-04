@@ -11,8 +11,8 @@ var transporter = nodemailer.createTransport(smtpTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
   auth: {
-    user: 'ss4u.team.node@gmail.com',
-    pass: 'Team Node Rocks7'
+    user: 'yourmail@gmail.com',
+    pass: 'yourpassword'
   }
 }));
  
@@ -37,7 +37,7 @@ app.post("/email",function(req,res){
 	  } 
         //console.log(req.body);
         res.statuscode = 200;
-        res.write('Email sent Successfully');
+      //  res.write('Email sent Successfully');
         res.end();
 	    console.log('Email sent: ' + info.response);
 	  
